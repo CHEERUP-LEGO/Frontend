@@ -9,7 +9,7 @@ import LoadingSpinner from "../common/LoadingSpinner"; // 로딩 스피너 컴�
 export default function AddCompanyContainer() {
     const [formData, setFormData] = useState({
         name: "",
-        websiteLink: ""
+        websiteUrl: ""
     });
     const [isLoading, setIsLoading] = useState(false); // 로딩 상태 추가
 
@@ -85,9 +85,9 @@ export default function AddCompanyContainer() {
                 {/* 기업 사이트 입력 */}
                 <InputLabel
                     label="기업 사이트"
-                    name="websiteLink"
+                    name="websiteUrl"
                     placeholder="기업 사이트"
-                    value={formData.websiteLink}
+                    value={formData.websiteUrl}
                     onChange={handleChange}
                 />
                 {/* 기업 추가 버튼 */}
