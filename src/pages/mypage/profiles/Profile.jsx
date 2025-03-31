@@ -37,9 +37,15 @@ const Profile = () => {
       const { name, username, file } = response.data.data;
       setProfileData({ name, username, profilePicture: file });
 
-      // 파일 URL 가공하여 이미지 표시
+      // // 파일 URL 가공하여 이미지 표시
+      // if (file) {
+      //   setPreview(`http://localhost:8072/jobbotdari-user/api/files/${file.split("/").pop()}`);
+      // } else {
+      //   setPreview(defaultProfile);
+      // }
+          // S3에 저장된 이미지 URL 직접 사용
       if (file) {
-        setPreview(`http://localhost:8072/jobbotdari-user/api/files/${file.split("/").pop()}`);
+        setPreview(file);
       } else {
         setPreview(defaultProfile);
       }
