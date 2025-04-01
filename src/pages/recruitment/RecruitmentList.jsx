@@ -9,7 +9,7 @@ export default function RecruitmentList() {
     useEffect(() => {
         const fetchRecruitments = async () => {
             try {
-                const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari/api/recruitment", {
+                const response = await axios.get("http://jobbotdari.kro.kr:8072/jobbotdari/api/recruitment", {
                     headers: {
                         "Content-Type": "application/json",
                     },

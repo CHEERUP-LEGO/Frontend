@@ -30,7 +30,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari-user/api/profile", {
+      const response = await axios.get("http://jobbotdari.kro.kr:8072/jobbotdari-user/api/profile", {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
@@ -143,7 +143,7 @@ const Profile = () => {
     }
 
     try {
-      await axios.patch("http://gateway-server-8072-dns:8072/jobbotdari-user/api/profile", profileDataToSend, {
+      await axios.patch("http://jobbotdari.kro.kr:8072/jobbotdari-user/api/profile", profileDataToSend, {
         headers: { Authorization: `Bearer ${accessToken}`, "Content-Type": "multipart/form-data" },
       });
 
