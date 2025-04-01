@@ -107,7 +107,7 @@ export default function Signup() {
 
         try {
             const response = await axios.post(
-                "http://gateway-server-8072.JobLego:8072/jobbotdari-user/api/auth/signup",
+                "http://gateway-server-8072-dns:8072/jobbotdari-user/api/auth/signup",
                 formDataToSend,
                 { headers: { "Content-Type": "multipart/form-data" } }
             );

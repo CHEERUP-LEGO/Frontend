@@ -13,7 +13,7 @@ export default function AddCompanyContainer() {
     });
     const [isLoading, setIsLoading] = useState(false); // 로딩 상태 추가
 
-    const userServerBaseUrl = "http://gateway-server-8072.JobLego:8072/jobbotdari-user";
+    const userServerBaseUrl = "http://gateway-server-8072-dns:8072/jobbotdari-user";
 
     // 로컬 스토리지에서 accessToken 가져오기
     const getAccessToken = () => {
