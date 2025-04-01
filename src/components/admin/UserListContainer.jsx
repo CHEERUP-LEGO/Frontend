@@ -13,7 +13,7 @@ export default function UserListContainer() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    const userServerBaseUrl = "http://gateway-server-8072-dns:8072/jobbotdari-user";
+    const userServerBaseUrl = "http://gateway-server-8072-dns:8072/jobbotdari-user-8080-dns";
 
     // 로컬 스토리지에서 accessToken 가져오기
     const getAccessToken = () => {

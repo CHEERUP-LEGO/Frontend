@@ -19,7 +19,7 @@ const InterestCompanies = () => {
     // 전체 기업 목록 조회
     const fetchCompanies = async () => {
         try {
-            const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari/api/company");
+            const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari-8081-dns/api/company");
             if (response.status === 200) {
                 setCompanies(response.data.data.companies);
             } else {
@@ -35,7 +35,7 @@ const InterestCompanies = () => {
     const fetchFavoriteCompanies = async () => {
         try {
             const accessToken = getAccessToken();
-            const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari-user/api/user/interests", {
+            const response = await axios.get("http://gateway-server-8072-dns:8072/jobbotdari-user-8080-dns/api/user/interests", {
                 headers: { Authorization: `Bearer ${accessToken}` }
             });
 
@@ -58,7 +58,7 @@ const InterestCompanies = () => {
         setFavoriteCompanies((prev) => [...prev, companyId]); // 즉시 상태 업데이트
         try {
             const accessToken = getAccessToken();
-            const response = await axios.post("http://gateway-server-8072-dns:8072/jobbotdari-user/api/user/interests", 
+            const response = await axios.post("http://gateway-server-8072-dns:8072/jobbotdari-user-8080-dns/api/user/interests", 
                 { companyId }, 
                 {
                     headers: {
@@ -84,7 +84,7 @@ const InterestCompanies = () => {
         setFavoriteCompanies((prev) => prev.filter(id => id !== companyId)); // 즉시 상태 업데이트
         try {
             const accessToken = getAccessToken();
-            const response = await axios.delete(`http://gateway-server-8072-dns:8072/jobbotdari-user/api/user/interests/${companyId}`, {
+            const response = await axios.delete(`http://gateway-server-8072-dns:8072/jobbotdari-user-8080-dns/api/user/interests/${companyId}`, {
                 headers: { Authorization: `Bearer ${accessToken}` }
             });
 
